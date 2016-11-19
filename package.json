@@ -1,0 +1,8 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "description": "a react starter with yarn",
+  "main": "index.js",
+  "author": "HC",
+  "license": "MIT"
+}
