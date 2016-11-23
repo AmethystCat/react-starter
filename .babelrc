@@ -1,8 +1,8 @@
 {
-    "presets": ["env"],
+    "presets": ["env", "react"],
     "env": {
     	"development": {
-
+    		"plugins": ["transform-runtime"]
     	},
     	"production": {
     		"plugins": ["transform-react-constant-elements"]
