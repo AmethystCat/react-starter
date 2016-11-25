@@ -23,21 +23,29 @@ var config_dev = {
         publicPath: '/'
     },
     resolve: {
-        root: '／src',
+        modules: [
+            "node_modules",
+            path.resolve(__dirname, '/src') 
+        ],
         extensions: ['', '.js', '.jsx', '.json', '.less']
     },
     devtool: 'eval',
     module: {
-        preLoaders: [{
-            test: /\.(js|jsx)$/,
-            loader: 'eslint-loader',
-            include: [path.resolve(__dirname, 'src')],
-            exclude: [path.resolve(__dirname, 'node_modules')]
-        }],
-        loaders: [
+        // preLoaders: [{
+        //     test: /\.(js|jsx)$/,
+        //     loader: 'eslint-loader',
+        //     include: [path.resolve(__dirname, 'src')],
+        //     exclude: [path.resolve(__dirname, 'node_modules')]
+        // }],
+        rules: [
+            {
+                test: /\.jsx?$/,
+                enforce: 'pre',
+                use: ['eslint-loader']
+            },
             {
                 test: /\.css$/,
-                loaders: ['style-loader', 'css-loader?sourceMap']
+                use: ['style-loader', 'css-loader?sourceMap']
             },
             {
                 test: /.less$/,
@@ -45,16 +53,17 @@ var config_dev = {
             },
             {
                 test: /\.(js|jsx)$/,
-                loader: 'babel-loader',
+                use: ['react-hot-loader', 'babel-loader'],
+                include: path.join(__dirname, 'src'),
                 exclude: [path.resolve(__dirname, 'node_modules')]
             },
             {
                 test: /\.(jpg|jpeg|png|gif)$/i,
-                loaders: ['url-loader?limit=15000&name=images/[name].[ext]']
+                use: ['url-loader?limit=15000&name=images/[name].[ext]']
             },
             {
                 test: /\.(woff|woff2|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url-loader?limit=25000'
+                use: ['url-loader?limit=25000']
             }
         ],
         plugins: [
