@@ -81,7 +81,7 @@ var config_dev = {
             'react-hot-loader/patch',
             'webpack-dev-server/client?http://192.168.5.103:8080',
             'webpack/hot/only-dev-server',
-            path.resolve(__dirname, 'src/entry.jsx')
+            path.resolve(__dirname, 'src/entry.js')
         ]
     },
     output: {
