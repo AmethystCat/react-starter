@@ -1,8 +1,8 @@
 {
-    "presets": ["env", "react"],
+    "presets": [["latest", {"es2015":{"modules": false}}], "stage-0", "react"],
     "env": {
     	"development": {
-    		"plugins": ["transform-runtime"]
+    		"plugins": ["transform-runtime", "react-hot-loader/babel"]
     	},
     	"production": {
     		"plugins": ["transform-react-constant-elements"]
