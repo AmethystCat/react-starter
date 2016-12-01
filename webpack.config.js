@@ -10,7 +10,7 @@ const config_dev = {
     entry: {
         index: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://10.0.0.124:8080',
+            'webpack-dev-server/client?http://192.168.5.103:8080',
             'webpack/hot/only-dev-server',
             path.resolve(__dirname, 'src/entry.js')
         ],
@@ -68,7 +68,7 @@ const config_dev = {
     },
     context: path.resolve(__dirname, 'src'),
     devServer: {
-        host: '10.0.0.124',
+        host: '192.168.5.103',
         hot: true,
         inline: true,
         contentBase: path.resolve(__dirname, 'build'),
