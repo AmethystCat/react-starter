@@ -10,7 +10,7 @@ const config_dev = {
     entry: {
         index: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://192.168.5.103:8080',
+            'webpack-dev-server/client?http://10.0.0.20:8080',
             'webpack/hot/only-dev-server',
             path.resolve(__dirname, 'src/entry.js')
         ],
@@ -21,13 +21,13 @@ const config_dev = {
     },
     //设置了reslove就不行 why?
     
-    // resolve: {
-    //     modules: [
-    //         path.join(__dirname, "src"),
-    //         "node_modules"
-    //     ],
-    //     extensions: ['js', '.jsx', '.json', '.less']
-    // },
+    resolve: {
+        modules: [
+            path.resolve(__dirname, 'src'),
+            path.resolve(__dirname, 'node_modules')
+        ],
+        extensions: ['js', '.jsx', '.json', '.less']
+    },
     
     output: {
         filename: 'js/[name].js',
@@ -53,7 +53,6 @@ const config_dev = {
             {
                 test: /\.(js|jsx)$/,
                 use: ['babel-loader'],
-                include: [path.resolve(__dirname, 'src')],
                 exclude: [path.resolve(__dirname, 'node_modules')]
             },
             {
@@ -66,9 +65,8 @@ const config_dev = {
             }
         ]
     },
-    context: path.resolve(__dirname, 'src'),
     devServer: {
-        host: '192.168.5.103',
+        host: '10.0.0.20',
         hot: true,
         inline: true,
         contentBase: path.resolve(__dirname, 'build'),
@@ -80,7 +78,8 @@ const config_dev = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', 
             filename: 'js/vendors.js'
-        })
+        }),
+        new webpack.NamedModulesPlugin()
     ]
 };
 

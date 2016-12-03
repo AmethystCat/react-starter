@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import T from './test.jsx';
+import T from './test';
 import { AppContainer } from 'react-hot-loader';
 
 import './test.less';
