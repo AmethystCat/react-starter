@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import T from './test';
+import T from './test.jsx';
 import { AppContainer } from 'react-hot-loader';
 
-import './test.less';
+import './testStyle.less';
 
 // let a = <h1>Hello react!</h1>
 
