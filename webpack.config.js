@@ -10,25 +10,25 @@ const config_dev = {
     entry: {
         index: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://10.0.0.20:8080',
+            'webpack-dev-server/client?http://192.168.5.103:8080',
             'webpack/hot/only-dev-server',
             path.resolve(__dirname, 'src/entry.js')
         ],
         vendors: [
             'react',
-            'react-dom'
+            'react-dom',
+            'redux',
+            'react-router'
         ]
     },
-    //设置了reslove就不行 why?
-    
     resolve: {
         modules: [
             path.resolve(__dirname, 'src'),
-            path.resolve(__dirname, 'node_modules')
+            'node_modules'
         ],
-        extensions: ['js', '.jsx', '.json', '.less']
+        extensions: ['.js', '.jsx', '.json', '.less']
     },
-    
+    context: path.resolve(__dirname, 'src'),
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, 'build'),
@@ -53,7 +53,7 @@ const config_dev = {
             {
                 test: /\.(js|jsx)$/,
                 use: ['babel-loader'],
-                exclude: [path.resolve(__dirname, 'node_modules')]
+                exclude: /node_modules/
             },
             {
                 test: /\.(jpg|jpeg|png|gif)$/i,
@@ -66,7 +66,7 @@ const config_dev = {
         ]
     },
     devServer: {
-        host: '10.0.0.20',
+        host: '192.168.5.103',
         hot: true,
         inline: true,
         contentBase: path.resolve(__dirname, 'build'),
