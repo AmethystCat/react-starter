@@ -5,12 +5,32 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 console.log(env);
 console.log('-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_超华丽的分割线-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_');
 
+const getUrl = (() => {
+    let argv = process.env.TEST_URL;
+    // process.argv.forEach((el, index) => {
+    //     if (el.indexOf('cc=') > -1) {
+    //         argv = el;
+    //     }
+    // });
+    // console.log(process.argv);
+    let defaultUrl = 'http://localhost:8080';
+    if (argv) return `http://${argv}`;
+    else return defaultUrl;
+})();
+
+const getHost = ((url) => {
+    return url.split(':')[1].split('//')[1];
+})(getUrl);
+
+console.log(getUrl);
+console.log(getHost);
+
 // dev
 const config_dev = {
     entry: {
         index: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://192.168.5.103:8080',
+            `webpack-dev-server/client?${getUrl}`,
             'webpack/hot/only-dev-server',
             path.resolve(__dirname, 'src/entry.js')
         ],
@@ -66,7 +86,7 @@ const config_dev = {
         ]
     },
     devServer: {
-        host: '192.168.5.103',
+        host: getHost,
         hot: true,
         inline: true,
         contentBase: path.resolve(__dirname, 'build'),
