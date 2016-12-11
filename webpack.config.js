@@ -5,6 +5,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 console.log(env);
 console.log('-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_超华丽的分割线-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_');
 
+/**
+ * 自定义ip ，并启动服务
+ * export TEST_URL=xxxxx && yarn start
+ * 
+ */
 const getUrl = (() => {
     let argv = process.env.TEST_URL;
     // process.argv.forEach((el, index) => {
