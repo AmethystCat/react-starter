@@ -1,6 +1,11 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import createStore from './create-store';
+import TestSub from './test_sub';
 
-export default class T extends React.Component {
+const store = createStore();
+
+export default class Test extends React.Component {
 
   constructor(props) {
     super(props);
@@ -8,7 +13,9 @@ export default class T extends React.Component {
 
   render() {
     return (
-      <div>hello react sssqweqwe</div>
+    	<Provider store={store}>
+    		<TestSub/>
+    	</Provider>
     );
   }
 }

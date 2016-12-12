@@ -10,8 +10,9 @@ import './testStyle.less';
 const render = () => {
 	ReactDOM.render(
 		<AppContainer>
-			<T/>
-		</AppContainer>, document.getElementById('app'));	
+			<Test/>
+		</AppContainer>, document.getElementById('app')
+	);	
 };
 
 render();
