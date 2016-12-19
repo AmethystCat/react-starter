@@ -1,5 +1,12 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
+let mapStateToProps = (state) => {
+	name: state.name,
+	list: state.list,
+	attr: state.attr
+};
 
 class TestSub extends React.Component {
 	constructor(props) {
@@ -13,4 +20,4 @@ class TestSub extends React.Component {
 	}
 }
 
-export default TestSub;
+export default connect(mapStateToProps)(TestSub);
