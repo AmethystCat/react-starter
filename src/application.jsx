@@ -1,9 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import createStore from './create-store';
-import TestSub from './test_sub';
+import Home from './home';
 
-const store = createStore();
+const store = createStore({
+  name: '',
+  list: [],
+  attr: {}
+});
 
 export default class Test extends React.Component {
 
@@ -14,7 +18,7 @@ export default class Test extends React.Component {
   render() {
     return (
     	<Provider store={store}>
-    		<TestSub/>
+    		<Home/>
     	</Provider>
     );
   }
