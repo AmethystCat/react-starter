@@ -1,4 +1,4 @@
-export add_name = (state = '', action) => {
+export function name(state = '', action) {
 	console.log('reducer add_name: ', action);
 	switch (action.type) {
 		case 'ADD_NAME':
@@ -8,7 +8,7 @@ export add_name = (state = '', action) => {
 	}
 }
 
-export add_list = (state = [], action) => {
+export function list(state = [], action) {
 	console.log('reducer add_list: ', action);
 	switch (action.type) {
 		case 'ADD_LIST':
@@ -18,13 +18,14 @@ export add_list = (state = [], action) => {
 	}
 }
 
-export add_attr = (state = {}, action) => {
+export function attr(state = {}, action) {
+	let {attr} = action;
 	console.log('reducer add_attr: ', action);
 	switch (action.type) {
 		case 'ADD_ATTR':
 			return {
 				...state,
-				action.attr
+				attr
 			};
 		default:
 			return state;
