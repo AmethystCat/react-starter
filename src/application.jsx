@@ -1,10 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import createStore from './create-store';
+import createStore from './store/create-store';
 import Home from './home';
 
 const store = createStore({
-  name: '',
+  name: 'test',
   list: [],
   attr: {}
 });

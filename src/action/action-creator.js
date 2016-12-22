@@ -1,7 +1,7 @@
-const add_name = (text) => {
+const add_name = (name) => {
 	return {
 		type: 'ADD_NAME',
-		text
+		name
 	};
 };
 

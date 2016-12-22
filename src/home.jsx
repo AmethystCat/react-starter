@@ -1,7 +1,8 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import actionCreators from './action-creator';
+import actionCreators from './action/action-creator';
+import Test from './module';
 
 
 let mapStateToProps = (state) => ({
@@ -18,9 +19,8 @@ class TestSub extends React.Component {
 	}
 
 	render() {
-		return (
-			<div>hello react!</div>
-		);
+		console.log(...this.props);
+		return (<Test attr={this.props}/>);
 	}
 }
 
