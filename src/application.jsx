@@ -4,7 +4,7 @@ import createStore from './store/create-store';
 import Home from './home';
 
 const store = createStore({
-  name: 'test',
+  name: 1,
   list: [],
   attr: {}
 });
