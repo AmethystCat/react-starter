@@ -8,7 +8,7 @@ export default class T extends React.Component {
 
   render() {
     return (
-      <div>hello react sssqweqwe</div>
+      <div>hello react</div>
     );
   }
 }
