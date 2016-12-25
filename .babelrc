@@ -1,6 +1,9 @@
 {
     "presets": [["latest", {"es2015":{"modules": false}}], "stage-2", "react"],
     "env": {
+    	"test": {
+    		"presets": ["es2015"]
+    	},
     	"development": {
     		"plugins": ["transform-runtime", "react-hot-loader/babel"]
     	},
