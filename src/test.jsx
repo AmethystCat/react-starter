@@ -6,9 +6,13 @@ export default class T extends React.Component {
     super(props);
   }
 
+  state = {
+	name: 'hello react'  	
+  }
+
   render() {
     return (
-      <div>hello react</div>
+      <div>{this.state.name}</div>
     );
   }
 }
