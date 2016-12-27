@@ -1,3 +1,3 @@
 # react starter
 
-* todo: redux, react-router, unit-test, async
+* todo: react-router, unit-test, async
