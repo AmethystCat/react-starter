@@ -1,0 +1,26 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "description": "a react starter with parcel",
+  "main": "index.js",
+  "author": "HC",
+  "license": "MIT",
+  "scripts": {
+    "start": "./node_modules/.bin/parcel src/index.html --no-cache",
+    "build": "./node_modules/.bin/parcel build src/index.html",
+    "test": "jest --config jest.json"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.8.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.1.0",
+    "less": "^2.7.2",
+    "parcel-bundler": "^1.9.2",
+    "react-test-renderer": "^16.4.1"
+  }
+}
